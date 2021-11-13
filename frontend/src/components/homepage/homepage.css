@@ -22,3 +22,47 @@
     outline: none;
     cursor: pointer;
 }
+
+.dash-main {
+    background-color: darkgray;
+}
+
+.site-card-wrapper {
+    margin: 20px 100px;
+}
+
+.legend-item-box {
+    width: 25px;
+    height: 25px;
+    margin: 10px 10px;
+    border-radius: 20%;
+}
+
+.legend-item-box:hover {
+    width: 25px;
+    height: 25px;
+    border-radius: 30%;
+    margin: 10px 10px;
+    border: 4px solid lightcoral;
+}
+
+.room-box {
+    float: left;
+}
+
+.btn-group {
+    margin: 10px;
+    width: 100%;
+}
+
+.ant-btn {
+    margin-right:10px !important;
+}
+
+.selected {
+    width: 25px;
+    height: 25px;
+    border-radius: 30%;
+    margin: 10px 10px;
+    border: 4px solid lightblue;
+}
