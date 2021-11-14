@@ -15,8 +15,11 @@ export const Navigation = (props) => {
             <span className='icon-bar'></span>{' '}
             <span className='icon-bar'></span>{' '}
           </button>
+          <a  className='navbar-brand page-scroll' href='#page-top'>
+          <span><img class="logo" src="https://media.discordapp.net/attachments/763271260120809532/909086767938949160/phm-logo2.png?width=417&height=409"/></span>
+          </a>
           <a className='navbar-brand page-scroll' href='#page-top'>
-            React Landing Page
+          PHOENIX HOSTEL MANAGEMENT
           </a>{' '}
         </div>
 
@@ -36,7 +39,7 @@ export const Navigation = (props) => {
               </a>
             </li>
             <li>
-              <a href='#portfolio' className='page-scroll'>
+              <a href='#gallery' className='page-scroll'>
                 Gallery
               </a>
             </li>
@@ -51,11 +54,11 @@ export const Navigation = (props) => {
                 Admin Login
               </a>
             </li>
-            <li>
+            {/* <li>
               <a href='/login' className='page-scroll'>
                 Student Login
               </a>
-            </li>
+            </li> */}
             
           </ul>
         </div>

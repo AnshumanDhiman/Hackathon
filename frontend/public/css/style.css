@@ -70,7 +70,7 @@ hr {
   margin-bottom: 20px;
   border: 0;
 }
-/* Navigation */
+/* -----------------------------------------------------Navigation------------------------------------------------ */
 #menu {
   padding: 15px;
   transition: all 0.8s;
@@ -203,7 +203,7 @@ a:focus,
   outline: none;
   outline-offset: none;
 }
-/* Header Section */
+/* ---------------------------------------------Header Section --------------------------------------------*/
 .intro {
   display: table;
   width: 100%;
@@ -244,9 +244,10 @@ header .intro-text {
   padding-bottom: 200px;
   text-align: center;
 }
-/* Features Section */
+/*------------------------------------------------------- Features Section---------------------------------------- */
 #features {
   background: #f6f6f6;
+  padding:30px 0;
 }
 #features i.fa {
   font-size: 38px;
@@ -260,7 +261,7 @@ header .intro-text {
   background: linear-gradient(to right, #6372ff 0%, #5ca9fb 100%);
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.05);
 }
-/* About Section */
+/*----------------------------------------------- About Section---------------------------------------------- */
 #about {
   padding: 100px 0;
 }
@@ -309,7 +310,10 @@ header .intro-text {
 }
 
 
-/* Portfolio Section */
+/*------------------------------------------------- Portfolio Section ---------------------------------------------*/
+#gallery{
+  margin-bottom: 70px;
+}
 #portfolio {
   padding: 100px 0;
 }
@@ -329,8 +333,8 @@ header .intro-text {
   color: #fff;
   background: linear-gradient(
     to right,
-    rgba(99, 114, 255, 0.8) 0%,
-    rgba(92, 169, 251, 0.8) 100%
+    rgba(99, 114, 255, 0.6) 50%,
+    rgba(206, 92, 251, 0.5) 100%
   );
   padding: 30% 0 0;
   height: 100%;
@@ -359,9 +363,7 @@ header .intro-text {
   opacity: 1;
 }
 
-
-
-/* Contact Section */
+/* --------------------------------------------------Contact Section --------------------------------------------*/
 #contact {
   padding: 100px 0 60px;
   background: linear-gradient(to right, #6372ff 0%, #5ca9fb 100%);
@@ -487,7 +489,7 @@ label {
   color: #608dfd;
   background: #fff;
 }
-/* Footer Section*/
+/*--------------------------------------------------- Footer Section---------------------------------------------*/
 #footer {
   background: #f6f6f6;
   padding: 30px 0;
@@ -507,4 +509,19 @@ label {
   #about img {
     margin: 50px 0;
   }
+}
+
+/* ---------------------------------------extra------------------------------------------------ */
+.logo{
+  height:50px !important;
+  width:55px !important;
+  position:relative;
+  bottom:15px;
+  border-radius:5px;
+}
+
+.gall-img{
+  height:280px !important;
+  width:380px !important;
+ 
 }

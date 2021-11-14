@@ -1,68 +1,43 @@
 {
   "Header": {
+    "title1": "Phoenix ",
     "title": "Hostel Management System",
-    "paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sed commodo nibh ante facilisis bibendum."
+    "paragraph": "Best Hostel Management System for Admin as well as Users/Students. "
   },
   "About": {
-    "paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    "Why": [
-      "Lorem ipsum dolor",
-      "Tempor incididunt",
-      "Lorem ipsum dolor",
-      "Incididunt ut labore"
-    ],
-    "Why2": [
-      "Aliquip ex ea commodo",
-      "Lorem ipsum dolor",
-      "Exercitation ullamco",
-      "Lorem ipsum dolor"
-    ]
+    "paragraph": "PHMS offers an advanced Hostel Management system for paperless hostel management operations. It covers many important aspects of hostel management. We're working to solve day to day communication, operational, learning and management issues through very much organised and effective solutions by providing many of the important features on Hostel Management website which brings a lot of convenience and efficiency. Students can be provided hostel accommodation based on the availability of rooms. When recording hostel details, custom fields can be added to record any additional information required by the institution. In our Hostel Management System, if the management wants to assign a different price for 2 seaters room or 3 seaters room or more. Yes, here we give such option too."
+
   },
   "Gallery": [
     {
-      "title": "Project Title",
-      "largeImage": "img/portfolio/01-large.jpg",
-      "smallImage": "img/portfolio/01-small.jpg"
+      "title": "",
+      "largeImage": "https://vistapointe.net/images/hostel-8.jpg",
+      "smallImage": "https://vistapointe.net/images/hostel-8.jpg"
     },
     {
-      "title": "Project Title",
-      "largeImage": "img/portfolio/02-large.jpg",
-      "smallImage": "img/portfolio/02-small.jpg"
+      "title": "",
+      "largeImage": "https://media-cdn.tripadvisor.com/media/photo-m/1280/1c/b1/e8/c1/hd-hostel.jpg",
+      "smallImage": "https://media-cdn.tripadvisor.com/media/photo-m/1280/1c/b1/e8/c1/hd-hostel.jpg"
     },
     {
-      "title": "Project Title",
-      "largeImage": "img/portfolio/03-large.jpg",
-      "smallImage": "img/portfolio/03-small.jpg"
+      "title": "",
+      "largeImage": "https://c1.wallpaperflare.com/preview/902/411/744/green-building-hostel-the-scenery.jpg",
+      "smallImage": "https://c1.wallpaperflare.com/preview/902/411/744/green-building-hostel-the-scenery.jpg"
     },
     {
-      "title": "Project Title",
-      "largeImage": "img/portfolio/04-large.jpg",
-      "smallImage": "img/portfolio/04-small.jpg"
+      "title": "",
+      "largeImage": "https://content.jdmagicbox.com/comp/chennai/r9/044pxx44.xx44.120403112436.q5r9/catalogue/rajalakshmi-students-working-womens-hostel-chennai-g9qtvmyejk.jpg?clr=333333",
+      "smallImage": "https://content.jdmagicbox.com/comp/chennai/r9/044pxx44.xx44.120403112436.q5r9/catalogue/rajalakshmi-students-working-womens-hostel-chennai-g9qtvmyejk.jpg?clr=333333"
     },
     {
-      "title": "Project Title",
-      "largeImage": "img/portfolio/05-large.jpg",
-      "smallImage": "img/portfolio/05-small.jpg"
+      "title": "",
+      "largeImage": "https://c1.wallpaperflare.com/preview/555/975/729/the-university-hostel-kielce-polytechnic-university-which.jpg",
+      "smallImage": "https://c1.wallpaperflare.com/preview/555/975/729/the-university-hostel-kielce-polytechnic-university-which.jpg"
     },
     {
-      "title": "Project Title",
-      "largeImage": "img/portfolio/06-large.jpg",
-      "smallImage": "img/portfolio/06-small.jpg"
-    },
-    {
-      "title": "Project Title",
-      "largeImage": "img/portfolio/07-large.jpg",
-      "smallImage": "img/portfolio/07-small.jpg"
-    },
-    {
-      "title": "Project Title",
-      "largeImage": "img/portfolio/08-large.jpg",
-      "smallImage": "img/portfolio/08-small.jpg"
-    },
-    {
-      "title": "Project Title",
-      "largeImage": "img/portfolio/09-large.jpg",
-      "smallImage": "img/portfolio/09-small.jpg"
+      "title": "",
+      "largeImage": "https://www.yha.co.nz/media/5372/yha-wanaka-interior-6-bed-unit-2018-james-reardon-_dsc4804-lr2000-2.jpg",
+      "smallImage": "https://www.yha.co.nz/media/5372/yha-wanaka-interior-6-bed-unit-2018-james-reardon-_dsc4804-lr2000-2.jpg"
     }
   ],
   
@@ -78,22 +53,22 @@
   "Features": [
     {
       "icon": "fa fa-comments-o",
-      "title": "Lorem ipsum",
+      "title": "Student life cycle",
       "text": "Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam."
     },
     {
       "icon": "fa fa-bullhorn",
-      "title": "Lorem ipsum",
+      "title": "Inventory management",
       "text": "Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam."
     },
     {
       "icon": "fa fa-group",
-      "title": "Lorem ipsum",
-      "text": "Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam."
+      "title": "Fees & Finance Management",
+      "text": "Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend ."
     },
     {
       "icon": "fa fa-magic",
-      "title": "Lorem ipsum",
+      "title": "Contactless attendance",
       "text": "Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam."
     }
   ]
