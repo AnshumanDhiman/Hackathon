@@ -54,11 +54,7 @@ export const Navigation = (props) => {
                 Admin Login
               </a>
             </li>
-            {/* <li>
-              <a href='/login' className='page-scroll'>
-                Student Login
-              </a>
-            </li> */}
+
             
           </ul>
         </div>
