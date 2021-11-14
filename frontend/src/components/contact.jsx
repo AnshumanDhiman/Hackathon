@@ -150,10 +150,12 @@ export const Contact = (props) => {
       <div id='footer'>
         <div className='container text-center'>
           <p>
-            &copy; HMS 2021{' '}
+            &copy; 2021. PHMS- All rights reserved{' '}
           </p>
         </div>
       </div>
     </div>
   )
 }
+
+// updated

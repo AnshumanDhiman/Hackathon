@@ -21,3 +21,5 @@ export const Image = ({ title, largeImage, smallImage }) => {
     </div>
   )
 }
+
+// updated
