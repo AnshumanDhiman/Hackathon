@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import {FooterDash} from "../FooterDash/FooterDash";
 import {NavDash} from "../NavDash/NavDash";
 import { Card, Col, Row, Radio, Space, Tooltip, Button, Modal, Form, Input} from 'antd';
@@ -11,10 +11,32 @@ import HostelImage3 from "../../33.jpg"
 
 const Homepage = ({updateUser}) => {
     const [hostel, setHostel] = useState(0);
-    const [hostelData, setHostelData] = useState();
+    const [hostelData, setHostelData] = useState(Data['hostel' + 1]);
     const [value , setValue] = useState(1);
     const [room, setRoom] = useState(1);
     const [isModalVisible, setIsModalVisible] = useState(false);
+    const [totalRoom, setTotalRoom] = useState(0);
+    const [filledRoom, setFilledRoom] = useState(0);
+    const [emptyRoom, setEmptyRoom] = useState(0);
+
+    useEffect(() => {
+        let temp = hostelData['floor' + value].length
+        setTotalRoom(temp);
+        let count = handleRoom();
+        let temp1 = temp - count;
+        setEmptyRoom(temp1);
+        setFilledRoom(count);
+    }, [value,hostel]);
+
+    const handleRoom = () => {
+        let count = 0;
+        hostelData['floor' + value].map(room => {
+            if(room.status){
+                count++;
+            }
+        })
+        return count
+    }
 
     const showModal = () => {
         setIsModalVisible(true);
@@ -43,9 +65,14 @@ const Homepage = ({updateUser}) => {
     };
 
     const Selection = (index) => {
-        setHostel(index);
+        let temp = hostelData['floor' + value].length
         setHostelData(Data['hostel' + index]);
-        console.log(Data['hostel' + index]);
+        setTotalRoom(temp);
+        let count = handleRoom();
+        let temp1 = temp - count;
+        setEmptyRoom(temp1);
+        setFilledRoom(count);
+        setHostel(index);
     }
 
     const onChange = e => {
@@ -153,9 +180,9 @@ const Homepage = ({updateUser}) => {
             {
                 hostel !== 0 &&
                 <div className="site-card-wrapper">
-                <div className = "room-data-edit" > <h1 style={{ fontSize:"3rem", marginTop:"5px"}}>Total Rooms = <span style={{color:"#B91646"}}>4</span></h1> </div>
-                <div className = "room-data-edit" ><h1 style={{ fontSize:"3rem", marginTop:"5px" }}>Filled Rooms = <span style={{color:"#B91646"}}>2</span></h1></div>
-                <div className = "room-data-edit1" > <h1 style={{ fontSize:"3rem", marginTop:"5px"}}>Empty Rooms = <span style={{color:"#B91646"}}>2</span></h1></div>
+                <div className = "room-data-edit" > <h1 style={{ fontSize:"3rem", marginTop:"5px"}}>Total Rooms = <span style={{color:"#B91646"}}>{totalRoom}</span></h1> </div>
+                <div className = "room-data-edit" ><h1 style={{ fontSize:"3rem", marginTop:"5px" }}>Filled Rooms = <span style={{color:"#B91646"}}>{filledRoom}</span></h1></div>
+                <div className = "room-data-edit1" > <h1 style={{ fontSize:"3rem", marginTop:"5px"}}>Empty Rooms = <span style={{color:"#B91646"}}>{emptyRoom}</span></h1></div>
                 <br/>
                 <br/>
                 <br/>
