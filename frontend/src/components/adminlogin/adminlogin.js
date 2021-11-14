@@ -33,11 +33,11 @@ const AdminLogin = ({ updateUser}) => {
         <div classname="x">
         <div className="mega">
         <div className="login">
-	    <div className="logo"></div>
+	    <div className="logo1"></div>
             <h1 className="adminheading">Admin Login</h1>
             <input type="text" name="email" value={user.email} onChange={handleChange} placeholder="Enter your Email"></input>
             <input type="password" name="password" value={user.password} onChange={handleChange}  placeholder="Enter your Password" ></input>
-            <div className="button" onClick={adminlogin}>Login</div>
+            <div className="button btn-edit" onClick={adminlogin}>Login</div>
         </div>
         </div>
         </div>

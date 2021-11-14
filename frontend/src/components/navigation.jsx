@@ -16,7 +16,7 @@ export const Navigation = (props) => {
             <span className='icon-bar'></span>{' '}
           </button>
           <a  className='navbar-brand page-scroll' href='#page-top'>
-          <span><img class="logo" src="https://media.discordapp.net/attachments/763271260120809532/909086767938949160/phm-logo2.png?width=417&height=409"/></span>
+          <span><img class="logo" src="https://media.discordapp.net/attachments/763271260120809532/909086767938949160/phm-logo2.png?width=417&height=409" alt=""/></span>
           </a>
           <a className='navbar-brand page-scroll' href='#page-top'>
           PHOENIX HOSTEL MANAGEMENT
@@ -52,6 +52,11 @@ export const Navigation = (props) => {
              <li>
               <a href='/adminlogin' className='page-scroll'>
                 Admin Login
+              </a>
+            </li>
+            <li>
+              <a href='/view' className='page-scroll'>
+                View Availablility
               </a>
             </li>
 

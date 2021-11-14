@@ -153,22 +153,34 @@ const Homepage = ({updateUser}) => {
             {
                 hostel !== 0 &&
                 <div className="site-card-wrapper">
-                <div className = "room-data-edit" > <h2 style={{display:"inline-block", fontSize:"3rem"}}>Total Rooms = <span style={{color:"yellow"}}>{room}</span></h2> </div>
-                <div className = "room-data-edit" ><h2 style={{display:"inline-block", fontSize:"3rem" }}>Filled Rooms = <span style={{color:"lightgreen"}}>2</span></h2></div>
-                <div className = "room-data-edit1" > <h2 style={{display:"inline-block", fontSize:"3rem"}}>Empty Rooms = <span style={{color:"red"}}>2</span></h2></div>
-
+                <div className = "room-data-edit" > <h1 style={{ fontSize:"3rem", marginTop:"5px"}}>Total Rooms = <span style={{color:"#B91646"}}>4</span></h1> </div>
+                <div className = "room-data-edit" ><h1 style={{ fontSize:"3rem", marginTop:"5px" }}>Filled Rooms = <span style={{color:"#B91646"}}>2</span></h1></div>
+                <div className = "room-data-edit1" > <h1 style={{ fontSize:"3rem", marginTop:"5px"}}>Empty Rooms = <span style={{color:"#B91646"}}>2</span></h1></div>
                 <br/>
                 <br/>
-                    <h1>{hostelData.name}</h1>
+                <br/>
+                    <h2>{hostelData.name}</h2>
+                 
                     <Row>
-                        <Col xs={20} sm={16} md={12} lg={8} xl={4}>
-                        <Radio.Group onChange={onChange} value={value}>
+                    
+                        <Col xs={20} sm={16} md={12} lg={8} xl={3}>
+                        <div classname="room-data-edit" >
+                        <Radio.Group onChange={onChange} value={value} buttonStyle="solid" >
+                   
+                             <Space direction="vertical" > 
+                             <Radio.Button value={1} style={{marginTop:"15px"}}>Floor 1</Radio.Button>
+                             <Radio.Button value={2}>Floor 2</Radio.Button>
+                             <Radio.Button value={3}>Floor 3</Radio.Button>
+                             </Space>
+                        </Radio.Group>
+                        {/* <Radio.Group onChange={onChange} value={value}>
                             <Space direction="vertical">
                             <Radio value={1}>Floor 1</Radio>
                             <Radio value={2}>Floor 2</Radio>
                             <Radio value={3}>Floor 3</Radio>
                             </Space>
-                        </Radio.Group>
+                        </Radio.Group> */}
+                        </div>
                         </Col>
                         <Col xs={2} sm={4} md={6} lg={8} xl={10}>
                             {
@@ -190,32 +202,41 @@ const Homepage = ({updateUser}) => {
                             <div className="btn-group">
                                 <Button  onClick={showModal} disabled={hostelData['floor' + value][room-1].status ? true : false} type="primary" className="button-edit1">Allocate Room</Button>
                                 <Button  onClick={showModal1} disabled={hostelData['floor' + value][room-1].status ? false : true} type="primary" className="button-edit2" >ReAllocate Room</Button>
+                               <br/>
+                               <br/>
+                                <div className="req-room-data">
                                 {
                                     (room) &&
                                     <span>
-                                        Room Selected: {room}
+                                        Room Selected : <span  style={{color:"red"}}>{room}</span>
                                     </span>
                                 }
+                                </div>
                                 <Modal title={"ReAllocate room: " + room} visible={isModalVisible1} onOk={handleOk1} onCancel={handleCancel1}>
                                     <h4 style={{textAlign: 'center'}}>Choose a new room</h4>
                                     {
                                         hostelData['floor' + value].map((room,index) => (
                                             <div className="room-box">
                                                 {
+                                                    
                                                     room.status &&
                                                     <Tooltip placement="topLeft" title={"Occupied by: " + room.name} >
                                                         <div onClick={() => swap(index)} className="legend-item-box" style={{ backgroundColor: '#77D970' }} />
-                                                    </Tooltip>
+                                                    
+                                                    </Tooltip>     
                                                 }
+
                                                 {
                                                     !room.status &&
                                                     <div onClick={() => reallocate(index)} className="legend-item-box" style={{ backgroundColor: '#FF2E63' }} />
                                                 }
+                                      
                                             </div>
                                         ))
                                     }
                                     <br /><br /><br />
                                     <br /><br /><br />
+                                  
                                 </Modal>
                                 <Modal title={"Allocate room: " + room} visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}   cancelButtonProps={{ style: { display: 'none' } }}  okButtonProps={{ style: { display: 'none' } }} >
                                 <Form
@@ -300,7 +321,7 @@ const Homepage = ({updateUser}) => {
                         <Col xs={2} sm={4} md={6} lg={8} xl={10}>
                             {
                                 hostelData['floor' + value][room-1].status &&
-                                <div className="req-hostel-data" style={{backgroundColor:"white", borderRadius:"20px", backgroundColor:"lightgray", paddingLeft:"10px"}}>
+                                <div className="req-hostel-data" >
                                 <br/>
                                     <h4> Name: {hostelData['floor' + value][room-1].name}</h4>
                                     <h4> Phone Number: {hostelData['floor' + value][room-1].phone}</h4>
@@ -313,7 +334,7 @@ const Homepage = ({updateUser}) => {
                       
                     </Row>
                     <br/>
-                    <br/>
+                   
                   
                 </div>
            
