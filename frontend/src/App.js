@@ -3,7 +3,7 @@ import './App.css'
 import Homepage from "./components/homepage/homepage"
 import Home from './components/home/home'
 import Login from "./components/login/login"
-import Student from "./components/homepagestudent/homepagestudent" 
+import View from "./components/homepagestudent/view" 
 import AdminLogin from "./components/adminlogin/adminlogin"
 import Register from "./components/register/register"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -43,8 +43,9 @@ function App() {
           <Route path="/register">
             <Register />
           </Route>
-          <Route path="/homepagestudent">
-            <Student />
+         
+          <Route path="/view">
+            <View />
           </Route>
         
         </Switch>
