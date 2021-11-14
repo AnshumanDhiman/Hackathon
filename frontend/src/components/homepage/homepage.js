@@ -5,6 +5,9 @@ import { Card, Col, Row, Radio, Space, Tooltip, Button, Modal, Form, Input} from
 import Data from './data/temp';
 import 'antd/dist/antd.css';
 import "./homepage.css"
+import HostelImage1 from "../../11.jpg"
+import HostelImage2 from "../../22.jpg"
+import HostelImage3 from "../../33.jpg"
 
 const Homepage = ({updateUser}) => {
     const [hostel, setHostel] = useState(0);
@@ -103,6 +106,7 @@ const Homepage = ({updateUser}) => {
     }
 
     return (
+        <div>
         <div className="dash-main">
             <NavDash updateUser={updateUser} />
             <br /><br /><br />
@@ -110,28 +114,50 @@ const Homepage = ({updateUser}) => {
             {
                 hostel === 0 &&
                 <div className="site-card-wrapper">
-                    <Row gutter={12}>
+                    <Row gutter={25} >
                     <Col span={8}>
-                        <Card onClick={() => Selection(1)} title="Hostel 1" bordered={false}>
-                        Hostel description
+                  
+                        <Card  className="card-edit" onClick={() => Selection(1)} title="Hostel 1" bordered={false}>
+                        <div className="card-img-div">
+                        <img src={HostelImage1} alt="Hostel 1" className="card-img-edit1" />
+                        </div>
+                        <br/>
+                        Boys Hostel
+                 
                         </Card>
                     </Col>
                     <Col span={8}>
-                        <Card onClick={() => Selection(2)} title="Hostel 2" bordered={false}>
-                        Hostel description
+                        <Card className="card-edit" onClick={() => Selection(2)} title="Hostel 2" bordered={false}>
+                        <div className="card-img-div">
+                        <img src={HostelImage2} alt="Hostel 2" className="card-img-edit2" />
+                        </div>
+                        <br/>
+                        Boys Hostel
                         </Card>
                     </Col>
                     <Col span={8}>
-                        <Card onClick={() => Selection(3)} title="Hostel 3" bordered={false}>
-                        Hostel description
+                        <Card className="card-edit" onClick={() => Selection(3)} title="Hostel 3" bordered={false}>
+                        <div className="card-img-div">
+                        <img src={HostelImage3} alt="Hostel 3" className="card-img-edit3" />
+                        </div>
+                        <br/>
+                        Girls Hostel
                         </Card>
+                        <br/>
+                    <br/>
                     </Col>
+                    
                     </Row>
                 </div>
             }
             {
                 hostel !== 0 &&
                 <div className="site-card-wrapper">
+                <h1 style={{display:"inline-block",marginRight:"15%"}}>Total Rooms = <span style={{color:"yellow"}}>{room}</span></h1>
+                <h1 style={{display:"inline-block" ,marginRight:"15%"}}>Filled Rooms = <span style={{color:"lightgreen"}}>2</span></h1>
+                <h1 style={{display:"inline-block"}}>Empty Rooms = <span style={{color:"red"}}>2</span></h1>
+                <br/>
+                <br/>
                     <h1>{hostelData.name}</h1>
                     <Row>
                         <Col xs={20} sm={16} md={12} lg={8} xl={4}>
@@ -149,20 +175,20 @@ const Homepage = ({updateUser}) => {
                                     <div className="room-box">
                                         {
                                             sel.status &&
-                                            <Tooltip placement="topLeft" title={"Occupied by: " + sel.name} >
-                                                <div onClick={() => mainFunc(index)} className={room-1===index ? "legend-item-box selected" : "legend-item-box"} style={{ backgroundColor: 'green' }} />
+                                            <Tooltip placement="topLeft" title={"Occupied by: " + sel.name}  >
+                                                <div onClick={() => mainFunc(index)} className={room-1===index ? "legend-item-box selected room-edit" : "legend-item-box room-edit" } style={{ backgroundColor: '#77D970' }} />
                                             </Tooltip>
                                         }
                                         {
                                             !sel.status &&
-                                            <div onClick={() => mainFunc(index)} className={room-1===index ? "legend-item-box selected" : "legend-item-box"} style={{ backgroundColor: 'red' }} />
+                                            <div onClick={() => mainFunc(index)} className={room-1===index ? "legend-item-box selected room-edit" : "legend-item-box room-edit"} style={{ backgroundColor: '#FF2E63' }} />
                                         }
                                     </div>
                                 ))
                             }
                             <div className="btn-group">
-                                <Button onClick={showModal} disabled={hostelData['floor' + value][room-1].status ? true : false} type="primary">Allocate Room</Button>
-                                <Button onClick={showModal1} disabled={hostelData['floor' + value][room-1].status ? false : true} type="primary">ReAllocate Room</Button>
+                                <Button  onClick={showModal} disabled={hostelData['floor' + value][room-1].status ? true : false} type="primary" className="button-edit1">Allocate Room</Button>
+                                <Button  onClick={showModal1} disabled={hostelData['floor' + value][room-1].status ? false : true} type="primary" className="button-edit2" >ReAllocate Room</Button>
                                 {
                                     (room) &&
                                     <span>
@@ -177,12 +203,12 @@ const Homepage = ({updateUser}) => {
                                                 {
                                                     room.status &&
                                                     <Tooltip placement="topLeft" title={"Occupied by: " + room.name} >
-                                                        <div onClick={() => swap(index)} className="legend-item-box" style={{ backgroundColor: 'green' }} />
+                                                        <div onClick={() => swap(index)} className="legend-item-box" style={{ backgroundColor: '#77D970' }} />
                                                     </Tooltip>
                                                 }
                                                 {
                                                     !room.status &&
-                                                    <div onClick={() => reallocate(index)} className="legend-item-box" style={{ backgroundColor: 'red' }} />
+                                                    <div onClick={() => reallocate(index)} className="legend-item-box" style={{ backgroundColor: '#FF2E63' }} />
                                                 }
                                             </div>
                                         ))
@@ -190,7 +216,7 @@ const Homepage = ({updateUser}) => {
                                     <br /><br /><br />
                                     <br /><br /><br />
                                 </Modal>
-                                <Modal title={"Allocate room: " + room} visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
+                                <Modal title={"Allocate room: " + room} visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}   cancelButtonProps={{ style: { display: 'none' } }}  okButtonProps={{ style: { display: 'none' } }} >
                                 <Form
                                     name="basic"
                                     labelCol={{
@@ -260,9 +286,11 @@ const Homepage = ({updateUser}) => {
                                         span: 16,
                                         }}
                                     >
-                                        <Button type="primary" htmlType="submit">
+                                 
+                                        <Button type="primary" htmlType="submit" className="button-edit1">
                                         Allocate Room
                                         </Button>
+                                        
                                     </Form.Item>
                                     </Form>
                                 </Modal>
@@ -271,18 +299,33 @@ const Homepage = ({updateUser}) => {
                         <Col xs={2} sm={4} md={6} lg={8} xl={10}>
                             {
                                 hostelData['floor' + value][room-1].status &&
-                                <div>
-                                    <h4>Name: {hostelData['floor' + value][room-1].name}</h4>
-                                    <h4>Phone Number: {hostelData['floor' + value][room-1].phone}</h4>
-                                    <h4>Age: {hostelData['floor' + value][room-1].age}</h4>
-                                    <h4>Email: {hostelData['floor' + value][room-1].email}</h4>
+                                <div style={{backgroundColor:"white", borderRadius:"20px", backgroundColor:"lightgray", paddingLeft:"10px"}}>
+                                <br/>
+                                    <h4> Name: {hostelData['floor' + value][room-1].name}</h4>
+                                    <h4> Phone Number: {hostelData['floor' + value][room-1].phone}</h4>
+                                    <h4> Age: {hostelData['floor' + value][room-1].age}</h4>
+                                    <h4> Email: {hostelData['floor' + value][room-1].email}</h4>
+                                <br/>
                                 </div>
                             }
                         </Col>
+                      
                     </Row>
+                    <br/>
+                    <br/>
+                  
                 </div>
+           
             }
-            <FooterDash />
+     
+        </div>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <FooterDash/> 
         </div>
     )
 }
