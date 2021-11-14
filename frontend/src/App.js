@@ -1,6 +1,5 @@
 import './App.css'
 
-
 import Homepage from "./components/homepage/homepage"
 import Home from './components/home/home'
 import Login from "./components/login/login"
@@ -33,6 +32,7 @@ function App() {
             {
               user && user._id ? <Homepage updateUser={updateUser} /> : <Home updateUser={updateUser}/>
             }
+             
           </Route>
           <Route path="/adminlogin">
             <AdminLogin updateUser={updateUser} />

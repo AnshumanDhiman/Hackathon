@@ -1,3 +1,62 @@
+.card-img-div {
+    text-align: center;
+}
+
+.card-img-edit1 {
+
+    height: 100%;
+    width:100%;
+}
+.card-img-edit2 {
+
+    height: 100%;
+    width:91%;
+}
+
+.card-img-edit3 {
+
+    height: 100%;
+    width:81.5%;
+}
+
+
+.card-edit {
+    transition: transform 0.5s ease;
+}
+
+.card-edit:hover {
+    transform: scale(1.1);
+}
+.room-edit {
+    transition : transform 0.5s ease;
+}
+
+.room-edit:hover {
+    transform: scale(1.5);
+}
+
+.button-edit1 {
+    border-radius: 10px;
+    background-color: #FF2E63;
+    transition: transform 0.5s ease;
+}
+
+.button-edit1:hover {
+    transform: scale(1.1);
+    background-color: #FF2E63;
+}
+
+.button-edit2 {
+    border-radius: 10px;
+    background-color: #77D970;
+    transition: transform 0.5s ease;
+}
+
+.button-edit2:hover {
+    transform: scale(1.1);
+    background-color: #77D970;
+}
+
 .homepage {
     display: flex;
     flex-direction: column;
@@ -24,8 +83,10 @@
 }
 
 .dash-main {
-    background-color: darkgray;
+    background-color: #0e61af;
+
 }
+
 
 .site-card-wrapper {
     margin: 20px 100px;
