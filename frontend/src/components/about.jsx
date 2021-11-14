@@ -19,3 +19,5 @@ export const About = (props) => {
     </div>
   );
 };
+
+// updated

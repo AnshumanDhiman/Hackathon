@@ -22,3 +22,5 @@ export const Gallery = (props) => {
     </div>
   )
 }
+
+// updated
