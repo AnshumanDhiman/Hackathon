@@ -94,8 +94,10 @@ const Homepage = ({updateUser}) => {
         temp['floor' + value][room-1].age = values.Age;
         temp['floor' + value][room-1].status = true;
         setHostelData(temp);
-        console.log(hostelData,temp);
-        handleOk()
+        setEmptyRoom(emptyRoom-1);
+        setFilledRoom(filledRoom+1);
+        handleOk();
+ 
     };
     
     const onFinishFailed = (errorInfo) => {
@@ -114,6 +116,7 @@ const Homepage = ({updateUser}) => {
             temp['floor' + value][index] = temp1;
             setHostelData(temp);
         }
+        
     }
     
     const reallocate = (index) => {
@@ -129,6 +132,7 @@ const Homepage = ({updateUser}) => {
             setHostelData(temp);
             showModal1();
         }
+    
 
     }
 
@@ -177,29 +181,52 @@ const Homepage = ({updateUser}) => {
                     </Row>
                 </div>
             }
+            
             {
                 hostel !== 0 &&
-                <div className="site-card-wrapper">
-                <div className = "room-data-edit" > <h1 style={{ fontSize:"3rem", marginTop:"5px"}}>Total Rooms = <span style={{color:"#B91646"}}>{totalRoom}</span></h1> </div>
-                <div className = "room-data-edit" ><h1 style={{ fontSize:"3rem", marginTop:"5px" }}>Filled Rooms = <span style={{color:"#B91646"}}>{filledRoom}</span></h1></div>
-                <div className = "room-data-edit1" > <h1 style={{ fontSize:"3rem", marginTop:"5px"}}>Empty Rooms = <span style={{color:"#B91646"}}>{emptyRoom}</span></h1></div>
+                <div className="site-card-wrapper" >
+               
                 <br/>
                 <br/>
                 <br/>
-                    <h2>{hostelData.name}</h2>
+                <div style={{textAlign:"center"}}>
+            <h2 className="hostel-name-edit">{hostelData.name}</h2>
+            </div>
+            <div className="" >
+                <Row gutter={16}>
+                <Col span={8}>
+                 <Card title="Total Rooms" bordered={false}>
+                 <h1  style={{color:"#B91646"}}>{totalRoom}  <span style={{color:"blue",marginLeft:"70%"}}><i className='fa fa-bed   fa-x'></i></span></h1>
+                   </Card>
+                 </Col>
+                  <Col span={8}>
+                    <Card title="Filled Rooms" bordered={false}>
+                    <h1 style={{color:"#B91646"}}>{filledRoom} <span style={{color:"green",marginLeft:"70%"}}><i className='fa fa-check fa-x'></i></span></h1>
+                   </Card>
+                  </Col>
+                  <Col span={8}>
+                   <Card title="Empty Rooms" bordered={false}>
+                   <h1 style={{color:"#B91646"}}>{emptyRoom} <span style={{color:"red",marginLeft:"70%"}}><i className='fa fa-folder-open fa-x'></i></span></h1>
+                    </Card>
+                 </Col>
+                </Row>
+                <br/>
+                </div> 
                  
-                    <Row>
-                    
-                        <Col xs={20} sm={16} md={12} lg={8} xl={3}>
-                        <div classname="room-data-edit" >
-                        <Radio.Group onChange={onChange} value={value} buttonStyle="solid" >
-                   
+                    <Row style={{backgroundColor:"white"}}>
+                  
+                        <Col xs={20} sm={16} md={12} lg={8} xl={3} style={{marginTop:"15px"}}>
+                        <div >
+                        <Radio.Group   onChange={onChange} value={value} buttonStyle="solid" >
                              <Space direction="vertical" > 
-                             <Radio.Button value={1} style={{marginTop:"15px"}}>Floor 1</Radio.Button>
-                             <Radio.Button value={2}>Floor 2</Radio.Button>
-                             <Radio.Button value={3}>Floor 3</Radio.Button>
+                             <Radio.Button value={1} style={{marginTop:"15px",marginLeft:"50px"}}>Floor 1</Radio.Button>
+                             <Radio.Button value={2} style={{marginLeft:"50px"}}>Floor 2</Radio.Button>
+                             <Radio.Button value={3} style={{marginLeft:"50px"}}>Floor 3</Radio.Button>
                              </Space>
                         </Radio.Group>
+                     
+                        </div>
+                        
                         {/* <Radio.Group onChange={onChange} value={value}>
                             <Space direction="vertical">
                             <Radio value={1}>Floor 1</Radio>
@@ -207,9 +234,9 @@ const Homepage = ({updateUser}) => {
                             <Radio value={3}>Floor 3</Radio>
                             </Space>
                         </Radio.Group> */}
-                        </div>
+                    
                         </Col>
-                        <Col xs={2} sm={4} md={6} lg={8} xl={10}>
+                        <Col xs={2} sm={4} md={6} lg={8} xl={10}  style={{marginTop:"15px"}}>
                             {
                                 hostelData['floor' + value].map((sel,index) => (
                                     <div className="room-box">
@@ -227,6 +254,7 @@ const Homepage = ({updateUser}) => {
                                 ))
                             }
                             <div className="btn-group">
+                            
                                 <Button  onClick={showModal} disabled={hostelData['floor' + value][room-1].status ? true : false} type="primary" className="button-edit1">Allocate Room</Button>
                                 <Button  onClick={showModal1} disabled={hostelData['floor' + value][room-1].status ? false : true} type="primary" className="button-edit2" >ReAllocate Room</Button>
                                <br/>
@@ -345,11 +373,14 @@ const Homepage = ({updateUser}) => {
                                 </Modal>
                             </div>
                         </Col>
-                        <Col xs={2} sm={4} md={6} lg={8} xl={10}>
+                     
+                        <Col xs={2} sm={4} md={6} lg={8} xl={10}  style={{marginTop:"30px"}}>
                             {
                                 hostelData['floor' + value][room-1].status &&
                                 <div className="req-hostel-data" >
                                 <br/>
+                              
+
                                     <h4> Name: {hostelData['floor' + value][room-1].name}</h4>
                                     <h4> Phone Number: {hostelData['floor' + value][room-1].phone}</h4>
                                     <h4> Age: {hostelData['floor' + value][room-1].age}</h4>
@@ -364,9 +395,10 @@ const Homepage = ({updateUser}) => {
                    
                   
                 </div>
+              
            
             }
-     
+            <br/>
         </div>
         <br/>
         <br/>

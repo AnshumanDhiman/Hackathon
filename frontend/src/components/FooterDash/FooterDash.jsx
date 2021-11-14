@@ -5,7 +5,7 @@ export const FooterDash = (props) => {
         <div id='footer'>
         <div className='container text-center'>
           <p>
-            &copy; HMS 2021{' '}
+            &copy; PHMS 2021{' '}
           </p>
         </div>
       </div>
