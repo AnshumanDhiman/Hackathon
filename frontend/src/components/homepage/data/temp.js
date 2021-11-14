@@ -1,5 +1,3 @@
-import { getMultiValue } from "chartist"
-
 const temp = {
     "hostel1": {
         "name": "Hostel 1",
