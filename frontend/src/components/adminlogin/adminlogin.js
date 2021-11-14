@@ -31,6 +31,7 @@ const AdminLogin = ({ updateUser}) => {
 
     return (
         <div className="login">
+	    <div className="logo"></div>
             <h1>Admin Login</h1>
             <input type="text" name="email" value={user.email} onChange={handleChange} placeholder="Enter your Email"></input>
             <input type="password" name="password" value={user.password} onChange={handleChange}  placeholder="Enter your Password" ></input>
